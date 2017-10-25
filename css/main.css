@@ -1,0 +1,65 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: auto; /* set to auto fill the screen it is displayed on*/
+    width: auto; /* same as above, also makes the margin center below work*/
+    text-align: center; /*  centers all text in the body*/
+    margin: 2em auto; /*centers all elements in the body and gives a 2em margin*/
+    background-color: white;
+    color: navy;
+    font-family:  Arial, "Times New Roman", Times, serif;
+}
+
+.carousel-control{
+    width:5em;
+}
+#thumbnailRow .thumbnail{
+    padding-top:1.2em;
+    height:450px;
+}
+
+h1{
+    padding:1.5em 0 0em 0;
+    font-weight:bold;
+    font-size:300%;
+    font-family:'Times New Roman', Times, serif;
+}
+h3 {
+    font-weight: bold;
+}
+
+#brasilback {
+    background: url(../img/brasilpaint.jpg) no-repeat fixed center;
+}
+
+#canadaback {
+    background: url(../img/canada.jpg) no-repeat fixed center;
+}
+
+
+footer, #navbar {
+    background-color: #002776 ;
+}
+
+footer {
+    font-weight: bold;
+    font-size:120%;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding: 0.8em 0 0.8em 0;
+}
+footer a{
+    color: white;
+}
+
+a:hover{
+    font-style: italic;
+}
+
+input[type=text] {
+    width: 20%;
+}
+
