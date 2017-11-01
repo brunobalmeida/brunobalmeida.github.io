@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -23,8 +23,7 @@
     <![endif]-->
 </head>
 <body>
-
-    <div class="container-fluid"> <!-- Start of master div -->
+	<div class="container-fluid"> <!-- Start of master div -->
         
         <div class="row"> <!-- start row 01 -->
            
@@ -121,6 +120,41 @@
 
                 <span id="errormessage"></span>
 
+				
+				<?php
+					include ("formValidation.php");
+
+					$contactFiels = array('firstName', 'lastName','email','message');
+					$contactInfo = array();
+					
+					for($i = 0; $i < count($contactFiels); $i++)
+					{
+						if (!isset($_POST[$contactFiels[$i]]) || $_POST[$contactFiels[$i]] == '')
+						{
+							echo "<h3>Todos os campos devem ser preenchidos.</h3>";
+							return false;
+						}
+						else
+						{
+							$contactInfo["$contactFiels[$i]"] = $_POST["$contactFiels[$i]"];
+						}
+					}
+
+					if (ValidateContact($contactInfo)==true)
+					{
+						
+						//mail("dbrunob@gmail", "Contato da associação", $contactInfo['message'], $contactInfo['email']);
+						
+						echo "<h3>Sua mensagem foi enviada.</h3>";
+					}
+
+
+
+					
+
+				?>
+
+
             </div>
 
 
@@ -152,5 +186,16 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/transition.js"></script>
     <script src="../js/collapse.js"></script>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
